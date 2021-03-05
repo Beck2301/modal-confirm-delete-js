@@ -1,0 +1,41 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+<div class="modal fade" id="confirm-delete" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Eliminar registro</h4>
+                </div>
+                <div class="modal-body">
+                    <label>¿Estás seguro de eliminar el registro?</label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-ok" data-dismiss="modal">Sí</button>
+                    <a class="btn btn-danger" data-dismiss="modal">No
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <button id="go">
+    X
+    </button>
+
+    <script>
+        $(document).ready(function()
+    {
+    $('#confirm-delete').on('show.bs.modal',function(){
+    		$('.btn-ok').click(function(){
+        	console.log("Llamamos a la función de eliminación");
+        });
+    });
+    		
+        $('#go').click(function()
+        {
+            $('#confirm-delete').modal('show');
+           
+        })
+    });
+    </script>
